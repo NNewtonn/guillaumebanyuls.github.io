@@ -1,0 +1,259 @@
+body {
+    padding: 0%;
+    margin: 0%;
+    
+}
+#header {
+    position: absolute;
+    width: 100%;
+    margin: 0px;
+}
+#headerimage {
+    position: absolute;
+    width: 100%;
+    margin: 0px;
+    top: 0;
+    left: 0;
+
+}
+#headerimage *{
+    margin: 0px;
+    
+}
+#headerimage img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none; /* Todos los dias se aprende algo nuevo :) */
+  /*^^^ Esto hace que el input del mouse sea ignorado, asi el usuario puede seleccionar el h1 y el h2*/
+
+    
+}
+#headertitle {
+    padding-top: 14vh;
+    width: 50%;
+    overflow-x: hidden;
+}
+#header h2{
+    font-family: "Honk", system-ui;
+}
+#header h1, h2{
+    z-index: 1;
+    padding-left: 5vh;
+    width: 84%;
+    font-size: 70px;
+    color: white;
+    font-family: "Jersey 25", sans-serif;
+    animation: diagonal-move-anim 4s linear forwards 1 alternate;
+    
+}
+#header img:nth-child(4) {
+    
+    animation: helmet 7s linear forwards 1 alternate;
+    
+}
+
+#black-circle-container img{
+
+    top: 15%;
+}
+
+
+
+#header img:nth-child(5) {
+    opacity: 0;
+    animation: facereveal 5s linear forwards 1 alternate;
+    animation-delay: 1s;
+    
+}
+@keyframes facereveal {
+
+	0% {
+		opacity: 0;
+        transform: rotateX(90deg);
+	}
+
+	100% {
+		opacity: 50;
+        transform: rotateX(0);
+	}
+
+}
+@keyframes helmet {
+
+	0% {
+		transform: translate(0, -25vh) rotateX(90deg);
+	}
+
+	100% {
+		transform: translate(0vh, 0) rotateX(0deg);
+	}
+
+}
+
+@keyframes diagonal-move-anim {
+
+	0% {
+		transform: translate(200vh, -15vh) rotateZ(-6deg);
+	}
+
+	100% {
+		transform: translate(0vh, 0) rotateZ(-6deg);
+	}
+
+}
+::-webkit-scrollbar{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track-piece{
+	background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #CBCBCB;
+	outline: 2px solid #FFF;
+	outline-offset: -2px;
+	border: .1px solid #B7B7B7;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #909090;
+}
+
+
+
+   .icon-container {
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+  }
+
+
+  .icon {
+    position: absolute;
+    filter: 
+    drop-shadow(-1px -1px 0px #ffffff) 
+    drop-shadow(2px -1px 0px #ffffff) 
+    drop-shadow(2px 2px 0px #ffffff)
+    drop-shadow(-1px 2px 0px hsl(0, 0%, 92%));
+    width: 20px; 
+    height: 20px;
+    transition: all 90s ease-out; 
+  }
+
+
+  @keyframes floatAway {
+    0% {
+      transform: translate(-50vw, 0);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(150vw, -50vh); /* Move icons diagonally */
+      opacity: 0.4; /* Fade out */
+    }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-50px); } /* Bounce up */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media only screen and (max-width: 1900px) {
+    #header {
+        width: 150%;
+    }
+    #header h1, h2{
+        font-size: 50px;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    #headertitle {
+        padding: 0px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    #header h1, h2{
+        z-index: 2;
+        width: 80%;
+        font-size: 20px;
+    }
+    #header img:nth-child(4) {
+        display: none;
+    }
+    #header img:nth-child(5) {
+        opacity: 0;
+        animation: facereveal 1s linear forwards 1 alternate;
+        
+    }
+    .icon {
+        width: 20px; 
+        height: 20px;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    #headertitle {
+        padding: 0px;
+        height: 50vh;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+
+    #header h1, h2{
+        z-index: 3;
+        font-size: 20px;
+    }
+
+    #header img:nth-child(2) {
+
+        display: inherit;
+        animation: caidafrontal 2s ease-in forwards 1 alternate;
+        animation-delay: 1s;
+    }
+    #header img:nth-child(3) {
+
+        display: inherit;
+        animation: caidafrontal 2s ease-in forwards 1 alternate;
+        animation-delay: 1s;
+    }
+    #header img:nth-child(4) {
+
+        display: none;
+        
+    }
+    @keyframes caidafrontal {
+
+        20% {
+            transform: rotateX(40deg);
+        }
+    
+        100% {
+            transform: translate(0vh, 110vh) rotateX(90deg);
+        }
+    
+    }
+  }
