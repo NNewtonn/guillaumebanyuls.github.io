@@ -35,24 +35,6 @@ function randomizeIcons() {
     
   }
 
-
-  function disableScroll() {
-    console.log("Scroll ha sido desactivado por 3 segundos")
-    window.addEventListener('scroll', preventScroll, { passive: false });
-    // Re-enable scrolling after 3 seconds
-    setTimeout(enableScroll, 3000);
-  }
-
-  function preventScroll(event) {
-    event.preventDefault();
-    window.scrollTo(0, 0);
-  }
-
-  function enableScroll() {
-    window.removeEventListener('scroll', preventScroll);
-  }
-
   window.onload = function () {
     randomizeIcons();
-    disableScroll();
 };
