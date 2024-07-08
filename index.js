@@ -10,9 +10,6 @@ function randomizeIcons() {
       container.appendChild(duplicateIcon);
     }
   });
-
-
-
     const icons = document.querySelectorAll('.icon');
 
     icons.forEach(icon => {
@@ -38,4 +35,24 @@ function randomizeIcons() {
     
   }
 
-  window.onload = randomizeIcons; // Call function on page load
+
+  function disableScroll() {
+    console.log("Scroll ha sido desactivado por 3 segundos")
+    window.addEventListener('scroll', preventScroll, { passive: false });
+    // Re-enable scrolling after 3 seconds
+    setTimeout(enableScroll, 3000);
+  }
+
+  function preventScroll(event) {
+    event.preventDefault();
+    window.scrollTo(0, 0);
+  }
+
+  function enableScroll() {
+    window.removeEventListener('scroll', preventScroll);
+  }
+
+  window.onload = function () {
+    randomizeIcons();
+    disableScroll();
+};
